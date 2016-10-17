@@ -41,6 +41,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LocationLogic.cs" />
     <Compile Include="SendSms.cs" />
+    <Compile Include="Contacts.cs" />
+    <Compile Include="IContactOperator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

@@ -7,6 +7,5 @@
 		<Frame>
 			<Button x:Name="SendGeoSms" Clicked="Handle_Clicked" Text="Send SMS"/>
 		</Frame>
-
 	</StackLayout>
 </ContentPage>
