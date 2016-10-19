@@ -16,6 +16,16 @@ namespace a15
 			}
 		}
 
+		void GetContacts_Clicked (object sender, System.EventArgs e)
+		{
+			ContactsList clForm = new ContactsList ();
+
+			clForm.Load (Contacts.GetOperator());
+
+			new NavigationPage (clForm);
+		}
+
+
 		public a15Page ()
 		{
 			InitializeComponent ();

@@ -4,6 +4,9 @@
 		<Frame>
 			<Label x:Name="geoText" WidthRequest="20"/>
 		</Frame>
+		<Frame>			
+			<Button x:Name="GetContacts" Clicked="GetContacts_Clicked" Text="Send GEO SMS"/>
+		</Frame>
 		<Frame>
 			<Button x:Name="SendGeoSms" Clicked="Handle_Clicked" Text="Send SMS"/>
 		</Frame>

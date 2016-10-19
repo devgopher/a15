@@ -22,6 +22,12 @@ namespace a15
 			contOperator = ico;
 		}
 
+		public static IContactOperator GetOperator ()
+		{
+			return contOperator;
+		}
+
+
 		public static void AddPhone (string phoneNum)
 		{
 			contOperator.AddPhone (phoneNum);
@@ -50,6 +56,11 @@ namespace a15
 		public static List<string> GetSkypes ()
 		{
 			return contOperator.GetSkypes ();
+		}
+
+		public static List<Contact> GetFromMobile ()
+		{
+			return contOperator.GetFromMobile ();
 		}
 	}
 }
