@@ -3,11 +3,12 @@ using System.Collections.Generic;
 
 namespace a15
 {
-	public struct Contact
+	public class Contact
 	{
 		public string name;
 		public string phone;
 		public string skype;
+		public bool isSelected;
 	}
 
 	public interface IContactOperator
@@ -19,6 +20,8 @@ namespace a15
 
 		void DelPhone (string phone);
 		void DelSkype (string skype);
+
+		void Clear ();
 
 		List<string> GetPhones ();
 		List<string> GetSkypes ();

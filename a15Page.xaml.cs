@@ -19,10 +19,8 @@ namespace a15
 		void GetContacts_Clicked (object sender, System.EventArgs e)
 		{
 			ContactsList clForm = new ContactsList ();
-
-			clForm.Load (Contacts.GetOperator());
-
-			new NavigationPage (clForm);
+			clForm.Load (Contacts.GetOperator ());
+			App.Current.MainPage.Navigation.PushAsync ( clForm );
 		}
 
 
@@ -36,8 +34,5 @@ namespace a15
 
 			geoText.Text = vue;
 		}
-
-
-
 	}
 }
