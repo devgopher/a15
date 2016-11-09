@@ -6,8 +6,26 @@ namespace a15
 {
 	public partial class ContactsList : ContentPage
 	{
+		void Handle_TextChanged (object sender, Xamarin.Forms.TextChangedEventArgs e)
+		{
+
+			foreach (var cell in contCells) {
+				string input = cell.Value.Text.ToLower ();
+
+				if (!input.Contains (e.NewTextValue.ToLower ())) {
+					if (tableView.Root.Contains (cell.Key))
+						tableView.Root.Remove (cell.Key);
+
+				} else {
+					if (!tableView.Root.Contains (cell.Key))
+						tableView.Root.Add (cell.Key);					
+				}
+			}
+		}
+
 		List<Contact> contacts = null;
 		IContactOperator contOperator = null;
+
 
 		void Save_Clicked (object sender, System.EventArgs e)
 		{
@@ -25,17 +43,21 @@ namespace a15
 			InitializeComponent ();
 		}
 
+		private TableView tableView;
+
 		public void Load (IContactOperator op)
 		{
 			contOperator = op;
 			contacts = contOperator.GetFromMobile ();
 
-			TableView tableView = new TableView {
+			tableView = new TableView {
 				Intent = TableIntent.Form,
 				Root = new TableRoot
 				{
 				}
 			};
+
+			contCells.Clear ();
 
 			for (int i = 0; i < contacts.Count; ++i ) {
 				var cont = contacts [i];
@@ -44,18 +66,24 @@ namespace a15
 					continue;
 				
 				SwitchCell cntSwt = new SwitchCell ();
-				tableView.Root.Add (new TableSection { cntSwt });
+				TableSection newTS = new TableSection { cntSwt };
+
+				tableView.Root.Add (newTS);
 				cntSwt.Text = cont.name;
 				//cntSwt.On = cont.isSelected;
 
 				cntSwt.OnChanged += (sender, e) => { 
 					cont.isSelected = cntSwt.On; 
 				};
+
+				contCells[newTS] = cntSwt;
 			}
 
 			ContactsLayout.Children.Add (tableView);
 
 		}
+
+		private Dictionary<TableSection, SwitchCell> contCells = new Dictionary<TableSection, SwitchCell> ();
 
 		public void AddContactRecord (string name, string phone)
 		{

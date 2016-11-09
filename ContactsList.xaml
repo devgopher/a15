@@ -8,6 +8,7 @@
 			</Frame>
 			<Frame>
 				<StackLayout x:Name="ContactsLayout">
+					<Entry x:Name="ContactsFilter" TextChanged="Handle_TextChanged"></Entry>
 				</StackLayout>
 			</Frame>
 		</StackLayout>
