@@ -6,9 +6,11 @@ namespace a15
 {
 	public partial class ContactsList : ContentPage
 	{
-		void Handle_TextChanged (object sender, Xamarin.Forms.TextChangedEventArgs e)
-		{
+		List<Contact> contacts = null;
+		IContactOperator contOperator = null;
 
+		void Handle_TextChanged (object sender, TextChangedEventArgs e)
+		{
 			foreach (var cell in contCells) {
 				string input = cell.Value.Text.ToLower ();
 
@@ -18,14 +20,10 @@ namespace a15
 
 				} else {
 					if (!tableView.Root.Contains (cell.Key))
-						tableView.Root.Add (cell.Key);					
+						tableView.Root.Add (cell.Key);
 				}
 			}
 		}
-
-		List<Contact> contacts = null;
-		IContactOperator contOperator = null;
-
 
 		void Save_Clicked (object sender, System.EventArgs e)
 		{

@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="a15.ContactsList">
 	<ContentPage.Content>
-		<StackLayout>
-			<Frame>
-				<Button x:Name="Save" Text="Save" Clicked="Save_Clicked">
-				</Button>
+		<StackLayout BackgroundColor="Teal">
+			<Frame BackgroundColor="Teal">
+				<Button x:Name="Save" Text="Save" Clicked="Save_Clicked" BackgroundColor="Red" TextColor="White" />
 			</Frame>
-			<Frame>
+			<Frame BackgroundColor="Teal">
+				<Entry x:Name="ContactsFilter" TextChanged="Handle_TextChanged" />
+			</Frame>
+			<Frame BackgroundColor="Silver">
 				<StackLayout x:Name="ContactsLayout">
-					<Entry x:Name="ContactsFilter" TextChanged="Handle_TextChanged"></Entry>
 				</StackLayout>
 			</Frame>
 		</StackLayout>
