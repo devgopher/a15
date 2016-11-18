@@ -49,6 +49,7 @@
     <Compile Include="ContactsList.xaml.cs">
       <DependentUpon>ContactsList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SendWhatsApp.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

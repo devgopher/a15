@@ -13,6 +13,7 @@ namespace a15
 			var phones = Contacts.GetPhones ();
 			foreach (var phone in phones) {
 				SendSms.Send (phone, String.Format("Я нахожусь здесь: {0}", LocationLogic.Get()));
+				SendWhatsApp.Send ( phone, String.Format ("Я нахожусь здесь: {0}", LocationLogic.Get ()));
 			}
 		}
 
