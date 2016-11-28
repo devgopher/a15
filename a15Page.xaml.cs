@@ -12,8 +12,12 @@ namespace a15
 		{
 			var phones = Contacts.GetPhones ();
 			foreach (var phone in phones) {
-				SendSms.Send (phone, String.Format("Я нахожусь здесь: {0}", LocationLogic.Get()));
-				SendWhatsApp.Send ( phone, String.Format ("Я нахожусь здесь: {0}", LocationLogic.Get ()));
+				string mapLink = String.Format (@"https://maps.google.com/maps?z=18&q=loc:{0}+{1}", LocationLogic.GetLat(), LocationLogic.GetLong());
+
+				mapLink = mapLink.Replace (',', '.');
+
+				SendSms.Send (phone, String.Format("I'm here: {0} maps: {1}", LocationLogic.Get(), mapLink));
+				//SendWhatsApp.Send ( phone, String.Format ("Я нахожусь здесь: {0}", LocationLogic.Get ()));
 			}
 		}
 
@@ -28,12 +32,9 @@ namespace a15
 		public a15Page ()
 		{
 			InitializeComponent ();
-
 			LocationLogic.Init ();
 
-			string vue = LocationLogic.Get ();
-
-			geoText.Text = vue;
+			geoText.Text = LocationLogic.Get ();
 		}
 	}
 }

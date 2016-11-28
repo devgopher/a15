@@ -11,6 +11,9 @@ namespace a15
 		public bool isSelected;
 	}
 
+	/// <summary>
+	/// An interface for ContactOperator
+	/// </summary>
 	public interface IContactOperator
 	{
 		List<Contact> GetFromMobile ();

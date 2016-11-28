@@ -9,7 +9,7 @@ namespace a15
 		public delegate string GetLocation ();
 
 		private static InitLocation initLoc;
-		private static  GetLocation getLoc;
+		private static GetLocation getLoc;
 		private static GetLocation getLocLong;
 		private static GetLocation getLocLat;
 

@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace a15
 {
+	/// <summary>
+	/// Contacts list.
+	/// </summary>
 	public partial class ContactsList : ContentPage
 	{
 		List<Contact> contacts = null;

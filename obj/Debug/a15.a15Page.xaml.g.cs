@@ -20,12 +20,16 @@ namespace a15 {
         private global::Xamarin.Forms.Label geoText;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Button GetContacts;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Button SendGeoSms;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(a15Page));
             geoText = this.FindByName<global::Xamarin.Forms.Label>("geoText");
+            GetContacts = this.FindByName<global::Xamarin.Forms.Button>("GetContacts");
             SendGeoSms = this.FindByName<global::Xamarin.Forms.Button>("SendGeoSms");
         }
     }
