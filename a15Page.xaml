@@ -1,14 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:a15" x:Class="a15.a15Page">
-	<StackLayout BackgroundColor="Teal">
+	<StackLayout BackgroundColor="Teal" Orientation="Vertical">
 		<Frame BackgroundColor="Teal">
 			<Label x:Name="geoText" WidthRequest="20"/>
 		</Frame>
-		<Frame BackgroundColor="Teal">			
-			<Button x:Name="GetContacts" Clicked="GetContacts_Clicked" Text="Select contacts" BackgroundColor="Red" TextColor="White"/>
-		</Frame>
-		<Frame BackgroundColor="Teal">
-			<Button x:Name="SendGeoSms" Clicked="Handle_Clicked" Text="Send SMS" BackgroundColor="Red" TextColor="White"/>
-		</Frame>
+		<Button x:Name="GetContacts" Clicked="GetContacts_Clicked" Text="Select contacts" Style = "{StaticResource btnStyle}"/>
+		<Button x:Name="SendGeoSms" Clicked="Handle_Clicked" Text="Send SMS" Style = "{StaticResource btnStyle}"/>
 	</StackLayout>
 </ContentPage>
